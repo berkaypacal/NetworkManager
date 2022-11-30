@@ -11,6 +11,8 @@ public struct ManagerService {
     public init() {
     }
     
+    public static var shared = ManagerService()
+    
     public func getString() -> String {
         return text
     }
