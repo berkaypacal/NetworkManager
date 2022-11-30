@@ -5,15 +5,14 @@
 //  Created by Berkay Paçal on 11/28/22.
 //
 
-public struct ManagerService {
-    private static var text = "Hello, World!"
+class ManagerService {
 
     public init() {
     }
     
     public static var shared = ManagerService()
     
-    public static func getString() -> String {
-        return text
+    open func getString(title: String) -> String {
+        return title
     }
 }
