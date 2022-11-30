@@ -6,14 +6,14 @@
 //
 
 public struct ManagerService {
-    public var text = "Hello, World!"
+    private static var text = "Hello, World!"
 
     public init() {
     }
     
     public static var shared = ManagerService()
     
-    public func getString() -> String {
+    public static func getString() -> String {
         return text
     }
 }
