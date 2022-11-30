@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Berkay Paçal on 11/28/22.
 //
@@ -16,16 +16,16 @@ import Foundation
 import Alamofire
 import Logging
 
-protocol INetworkManager {
+public protocol INetworkManager {
     func request<T: Codable>(responseType: T.Type, urlRequest: URLRequestConvertible, completion: @escaping (Bool, T?) -> Void)
     var sessionManager: Session { get }
 }
 
 public class ManagerService: INetworkManager {
-    let sessionManager: Session
+    public let sessionManager: Session
     
     
-    init(networkInterceptor: RequestInterceptor) {
+    public init(networkInterceptor: RequestInterceptor) {
         self.sessionManager = {
             let configuration = URLSessionConfiguration.af.default
             let networkLogger = NetworkLogger()
