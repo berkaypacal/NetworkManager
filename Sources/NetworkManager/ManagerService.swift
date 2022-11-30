@@ -21,7 +21,7 @@ protocol INetworkManager {
     var sessionManager: Session { get }
 }
 
-class NetworkManager: INetworkManager {
+class ManagerService: INetworkManager {
     let sessionManager: Session
     
     
