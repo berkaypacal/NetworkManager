@@ -14,7 +14,10 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.6.1")),
-        .package(url: "https://github.com/apple/swift-log.git", .upToNextMajor(from: "1.4.4"))
+        .package(url: "https://github.com/apple/swift-log.git", .upToNextMajor(from: "1.4.4")),
+        .package(url: "https://github.com/plaid/plaid-link-ios", .upToNextMajor(from: "4.0.0")),
+
+        
         
     ],
     targets: [
@@ -22,7 +25,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "NetworkManager",
-            dependencies: [.product(name: "Logging" ,package: "swift-log"), "Alamofire",]),
+            dependencies: [.product(name: "Logging" ,package: "swift-log"), "Alamofire",.product(name: "LinkKit", package: "plaid-link-ios")]),
         
     ]
 )
